@@ -4,7 +4,7 @@ import os
 
 ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname("__file__"), os.path.pardir))
 output_list = []
-read_files = glob.glob(os.path.join(ROOT_DIR, "./first-run/*.json"))
+read_files = glob.glob(os.path.join(ROOT_DIR, "./target/P01/*.json"))
 
 
 def merge_first_run_json():
@@ -17,7 +17,7 @@ def merge_first_run_json():
 
 
 def read_rerun_json():
-    read_rerun_file = open(os.path.join(ROOT_DIR, "./rerun.json"), "rb")
+    read_rerun_file = open(os.path.join(ROOT_DIR, "./target/json-reports/cucumber.json"), "rb")
     load_rerun = json.load(read_rerun_file)
 
     for first_run_json in read_files:
